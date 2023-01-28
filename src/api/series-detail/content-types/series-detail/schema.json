@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "series_details",
+  "info": {
+    "singularName": "series-detail",
+    "pluralName": "series-details",
+    "displayName": "series_detail",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "plotSummary": {
+      "type": "richtext"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "year": {
+      "type": "string"
+    },
+    "totalEpisodes": {
+      "type": "integer"
+    },
+    "poster": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "trending",
+        "popular",
+        "ongoing",
+        "upcoming"
+      ]
+    },
+    "genre": {
+      "type": "enumeration",
+      "enum": [
+        "WuXia",
+        "XianXia"
+      ]
+    },
+    "casts": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::cast.cast",
+      "mappedBy": "series_details"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "saved": {
+      "type": "boolean",
+      "default": false
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::collection.collection",
+      "mappedBy": "series_details"
+    }
+  }
+}

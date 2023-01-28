@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "collections",
+  "info": {
+    "singularName": "collection",
+    "pluralName": "collections",
+    "displayName": "collection",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "series_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::series-detail.series-detail",
+      "inversedBy": "collections"
+    }
+  }
+}

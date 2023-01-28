@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "casts",
+  "info": {
+    "singularName": "cast",
+    "pluralName": "casts",
+    "displayName": "cast",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "castName": {
+      "type": "string",
+      "unique": true
+    },
+    "series_details": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::series-detail.series-detail",
+      "inversedBy": "casts"
+    }
+  }
+}
