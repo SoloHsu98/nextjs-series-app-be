@@ -74,6 +74,12 @@
       "relation": "manyToMany",
       "target": "api::collection.collection",
       "mappedBy": "series_details"
+    },
+    "comments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::comment.comment",
+      "mappedBy": "series_details"
     }
   }
 }
